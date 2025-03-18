@@ -1,6 +1,8 @@
 // const http = require('http')
 const port = process.env.PORT
 const express = require('express')
+const router = require('./router/myRouter.js')
+
 const app = express()
 
 // const server = http.createServer((req,res)=>{
@@ -13,8 +15,7 @@ const app = express()
 // server.listen(port,()=>{
 //     console.log(`start server in port : ${port}`)
 // })
-app.use((req,res)=>{
-    res.send("Hello Express")
-})
+
+app.use(router)
 
 app.listen(port,()=>{console.log(`port ${port}`)})
